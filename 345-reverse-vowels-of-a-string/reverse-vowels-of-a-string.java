@@ -4,10 +4,10 @@ class Solution {
         int l=0,r=s.length()-1;
         char[] arr=s.toCharArray();
         while(l<r){
-            while(l<r && str.indexOf(arr[l])==-1){
+            while(l<r && !isVowel(arr[l])){
                 l++;
             }
-            while(l<r && str.indexOf(arr[r])==-1){
+            while(l<r && !isVowel(arr[r])){
                 r--;
             }
             char ch=arr[l];
@@ -18,4 +18,6 @@ class Solution {
         }
         return new String(arr);
     }
-}
+    private static boolean isVowel(char ch){
+        return ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U';
+}}
