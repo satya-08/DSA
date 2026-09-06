@@ -23,11 +23,12 @@ class Solution {
             List<Integer> sublist=new ArrayList<>();
             int levelsize=queue.size();
             for(int i=0;i<levelsize;i++){
-                if(queue.peek().left!=null)
-                    queue.offer(queue.peek().left);
-                if(queue.peek().right!=null)
-                    queue.offer(queue.peek().right);
-                sublist.add(queue.poll().val);
+                TreeNode temp=queue.poll();
+                if(temp.left!=null)
+                    queue.offer(temp.left);
+                if(temp.right!=null)
+                    queue.offer(temp.right);
+                sublist.add(temp.val);
             }
             res.add(sublist);
 
