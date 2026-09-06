@@ -34,6 +34,6 @@ class Solution {
         int rh=heightdiff(root.right);
         if(rh==-1) return -1;
         if(Math.abs(rh-lh)>1) return -1;
-        return (1+Math.max(heightdiff(root.left),heightdiff(root.right)));
+        return (1+Math.max(lh,rh));
     }
 }
